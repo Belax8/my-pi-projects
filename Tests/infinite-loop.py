@@ -22,3 +22,6 @@ while is_active:
 		is_active = False
 
 	n += 1
+
+
+# chmod +x <filename>
