@@ -1,6 +1,11 @@
-# My Pi Projects
+# Raspberry Pi Projects
 
-This repo is just a collection of projects that I have played around with using my Raspberry Pi 3 Model B.
+This repo is a collection of projects that I have used for my Raspberry Pi 3 Model B.
+
+
+## My Setup
+
+I have a [raspberry pi 3 Model B](https://www.amazon.com/CanaKit-Raspberry-Clear-Power-Supply/dp/B01C6EQNNK/ref=sr_1_4?s=pc&ie=UTF8&qid=1476103434&sr=1-4&keywords=raspberry+pi+3) with an [EEEKIT case](https://www.amazon.com/Enclosure-External-Raspberry-Accessory-EEEKit/dp/B01EIZ7WIK/ref=sr_1_43?s=pc&ie=UTF8&qid=1476103483&sr=1-43&keywords=raspberry+pi+3+fan+case). I also use my [GPIO kit by viaboot](https://www.amazon.com/Raspberry-Breakout-Breadboard-Projects-Components/dp/B017C54VZA/ref=sr_1_1?s=pc&ie=UTF8&qid=1476103581&sr=1-1&keywords=raspberry+pi+3+gpio).
 
 
 ## Contributing
@@ -10,4 +15,4 @@ Since this repo is just full of projects that I have worked on in my spare time,
 
 ## License
 
-This repo is under the MIT License. See more details [here](https://github.com/Belax8/my-pi-projects/blob/master/LICENSE)
+This repo is under the MIT License. See more details [here](https://github.com/Belax8/raspberry-pi-projects/blob/master/LICENSE)
