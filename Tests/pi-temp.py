@@ -1,18 +1,17 @@
 #!/usr/bin/python
 
 # This isn't really an infinite loop
-# It will keep looping til it finds the first 10,000 prime numbers
+# It will keep looping til it finds the first 100,000 prime numbers
 
 # Imports
 import os
 
 # Change count if you want to run this more or less
-count = 5
+count = 8
 
-os.system('vcgencmd measure_temp')
+os.system('python basic-temp.py')
 
-while count > 0:
-
+for x in range(0,count):
 	is_active = True
 	array = []
 	n = 2
@@ -35,5 +34,4 @@ while count > 0:
 
         	n += 1
 	
-	os.system('vcgencmd measure_temp')
-	count -= 1
+	os.system('python basic-temp.py')
