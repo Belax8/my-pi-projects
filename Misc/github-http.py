@@ -3,37 +3,39 @@
 """
 This Script will print info about the given GitHub user below
 """
-user = 'Belax8'
-
+user = raw_input('Enter a GitHub username(i.e. Belax8): ')
 
 # Imports
-import urllib2, json
+import requests
 
 
 # User Request
-userUrl = 'https://api.github.com/users/' + user
-userRes = urllib2.urlopen(userUrl).read()
-content = json.loads(userRes)
+user_url = 'https://api.github.com/users/' + user
+user_res = requests.get(user_url)
+content = user_res.json()
 
 
-# Print user info
-print('Name: ' + content['login'])
+if user_res.status_code != 200:
+	print("This GitHub user doesn't exist")
+else:
+	# Print user info
+	print('Name: ' + content['login'])
 
-if content['company'] != None:
-	print('Company: ' + content['company'])
+	if content['company'] != None:
+		print('Company: ' + content['company'])
 
-if content['bio'] != None:
-	print('Bio: ' + content['bio'])
+	if content['bio'] != None:
+		print('Bio: ' + content['bio'])
 
-print('Followers: ' + str(content['followers']))
-
-
-# Get Organization info
-orgUrl = content['organizations_url']
-orgRes = urllib2.urlopen(orgUrl).read()
-orgContent = json.loads(orgRes)
+	print('Followers: ' + str(content['followers']))
 
 
-# Print User Organization info
-for org in orgContent:
-	print('Organization: ' + org['login'])
+	# Get Organization info
+	org_url = content['organizations_url']
+	org_res = requests.get(org_url)
+	org_content = org_res.json()
+
+
+	# Print User Organization info
+	for org in org_content:
+		print('Organization: ' + org['login'])
