@@ -3,17 +3,24 @@
 """
 This Script will print info about the given GitHub user below
 """
-user = raw_input('Enter a GitHub username(i.e. Belax8): ')
 
 # Imports
 import requests
+from sys import version_info
+
+
+# Setup
+py3 = version_info[0] > 2
+if py3:
+	user = input('Enter a GitHub username(i.e. Belax8): ')
+else:
+	user = raw_input('Enter a GitHub username(i.e. Belax8): ')
 
 
 # User Request
 user_url = 'https://api.github.com/users/' + user
 user_res = requests.get(user_url)
 content = user_res.json()
-
 
 if user_res.status_code != 200:
 	print("This GitHub user doesn't exist")

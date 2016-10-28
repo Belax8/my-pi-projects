@@ -23,7 +23,7 @@ try:
 		else:
 			GPIO.output(17, True)
 	
-		time.sleep(0.5)
+		time.sleep(0.1)
 
 # Cleanup	
 except KeyboardInterrupt:

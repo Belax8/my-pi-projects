@@ -7,7 +7,7 @@
 import os
 
 # Change count if you want to run this more or less
-count = 8
+count = 5
 
 os.system('python basic-temp.py')
 
