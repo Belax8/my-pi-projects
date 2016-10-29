@@ -17,11 +17,15 @@ url = 'http://api.openweathermap.org/data/2.5/weather?zip=' + zip_code + ',us&AP
 
 
 # Request
-weather = requests.get(url).json()
+data = requests.get(url)
+weather = data.json()
 
 
 # Print Info
-print('Location: ' + weather['name'])
-print('Weather: ' + weather['weather'][0]['description'])
-print('Wind: ' + str(weather['wind']['speed']) + 'MPH')
-print('Temperature: ' + str(weather['main']['temp']) + 'F')
+if data.status_code != 200:
+	print('Error. We could not find this location.')
+else:
+	print('Location: ' + weather['name'])
+	print('Weather: ' + weather['weather'][0]['description'])
+	print('Wind: ' + str(weather['wind']['speed']) + 'MPH')
+	print('Temperature: ' + str(weather['main']['temp']) + 'F')
