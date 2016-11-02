@@ -9,14 +9,24 @@ import json
 
 # Setup
 py3 = version_info[0] > 2
+# Get Search Text
 if py3:
 	search_text = input('What would you like to search? ')
 else:
 	search_text = raw_input('What would you like to search? ')
-
+# Get the number of results
+if py3:
+	num_results = input('How many results would you like to see?(Max: 20) ')
+else:
+	num_results = raw_input('How many results would you like to see?(Max: 20) ')
+# The API only allows 1 to 20 results
+if int(num_results) > 20:
+	num_results = 20
+elif int(num_results) < 1:
+	num_results = 1
 
 # Request
-url = 'http://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrnamespace=0&gsrlimit=10&prop=pageimages|extracts&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max&gsrsearch=' + search_text + '&callback=?'
+url = 'http://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrnamespace=0&gsrlimit=' + str(num_results) + '&prop=pageimages|extracts&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max&gsrsearch=' + search_text + '&callback=?'
 req = requests.get(url)
 
 
