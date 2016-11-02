@@ -22,6 +22,7 @@ weather = data.json()
 
 
 # Print Info
+print('')
 if data.status_code != 200:
 	print('Error. We could not find this location.')
 else:
@@ -29,3 +30,4 @@ else:
 	print('Weather: ' + weather['weather'][0]['description'])
 	print('Wind: ' + str(weather['wind']['speed']) + 'MPH')
 	print('Temperature: ' + str(weather['main']['temp']) + 'F')
+print('')

@@ -22,12 +22,10 @@ data = req.json()
 
 
 # Display data
+print('')
 if req.status_code != 200:
-	print('')
 	print('Sorry that pokemon doesn\'t exist')
-	print('')
 else:
-	print('')
 	print('Name: ' + data['name'].title())
 	print('Height: ' + str(data['height']))
 	print('Weight: ' + str(data['weight']))
@@ -43,4 +41,4 @@ else:
 	for n in data['held_items']:
 		print(' * ' + n['item']['name'])
 
-	print('')
+print('')

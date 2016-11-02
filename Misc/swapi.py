@@ -45,17 +45,16 @@ def no_character_available():
 
 
 # Display data
+print('')
 if req.status_code != 200:
-	print('')
 	no_character_available()
-	print('')
 else:
-	print('')
 	if data['count'] == 0:
 		no_character_available()
 	elif data['count'] == 1:
 		display_one_character()
 	else:
 		display_list()
-	print('')
+
+print('')
 
