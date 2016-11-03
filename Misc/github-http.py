@@ -22,6 +22,9 @@ user_url = 'https://api.github.com/users/' + user
 user_res = requests.get(user_url)
 content = user_res.json()
 
+
+# Display Data
+print('')
 if user_res.status_code != 200:
 	print("This GitHub user doesn't exist")
 else:
@@ -46,3 +49,4 @@ else:
 	# Print User Organization info
 	for org in org_content:
 		print('Organization: ' + org['login'])
+print('')
