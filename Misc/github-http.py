@@ -48,5 +48,11 @@ else:
 
 	# Print User Organization info
 	for org in org_content:
-		print('Organization: ' + org['login'])
+		print('')
+		org_info_url = org['url']
+		org_info = requests.get(org_info_url).json()
+		print('Organization: ' + org_info['name'])
+		if len(org_info['description']) > 1:
+			print('Description: ' + org_info['description'])
+		print('Website: ' + org_info['blog'])
 print('')
