@@ -12,7 +12,7 @@ py3 = version_info[0] > 2
 if py3:
 	pokemon = input('Which pokemon would you like to look up? ')
 else:
-	pokemon = raw_input('Which pokemon would you like to loop up? ')
+	pokemon = raw_input('Which pokemon would you like to look up? ')
 
 
 # Make Request
